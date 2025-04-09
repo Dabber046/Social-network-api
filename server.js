@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api', routes);
+app.use('/api', routes); // ✅ Make sure `routes` is a router!
 
 db.once('open', () => {
   app.listen(PORT, () => {
